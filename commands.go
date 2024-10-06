@@ -36,9 +36,7 @@ func (list *List) run() {
 	}
 	if list.Tags != "" {
 		taglist := strings.Split(list.Tags, ",");
-		fmt.Println(taglist);
 		for _, elem := range(m) {
-			fmt.Println(elem.tags);
 			if isSubset(taglist, elem.tags) {
 				elem.display();
 			}
