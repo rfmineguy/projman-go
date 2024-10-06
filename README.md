@@ -4,9 +4,15 @@ I struggle sometimes to find them so I decided to write a program to manage thei
 This program provides a simple CSV database that stores the name, description, and tags of the projects you register to it.
 
 One feature I particularly like is the ability to put the database anywhere. Through the `PROJDB_LOC` environment variable you can
-put the database anywhere. This also means you can use multiple databases in different locations of you choose to.
+put the database anywhere. [See Database section](#database) This also means you can use multiple databases in different locations of you choose to.
 
 It is written in go, so you should have that installed.
+
+# Database
+projman supplies a feature that lets you change where the active database is located. So lets say you want a database that manages only your c projects. You could put a database in that folder by setting `PROJDB_LOC` to your c projects folder.
+Then say you want one that manages go projects. You could initialize a new database there!
+
+Now whenever you want to switch what database projman uses you just set `PROJDB_LOC` and that's it!
 
 # Installing
 ```bash
@@ -42,9 +48,9 @@ Help Options:
   -h, --help      Show this help message
 
 [register command options]
-      -n, --name=
-      -p, --path=
-      -t, --tags=
+      -n, --name= The name of the project
+      -p, --path= The path of the project on your computer
+      -t, --tags= The tags you wish to associate with your project
 ```
 
 ## List
@@ -60,7 +66,7 @@ Help Options:
   -h, --help         Show this help message
 
 [list command options]
-      -a, --all
-      -t, --by-tags=
-      -n, --by-name=
+      -a, --all      Listing of all registered projects (can be long)
+      -t, --by-tags= Listing of projects registered with the supplied tags
+      -n, --by-name= Listing of projects registered with the supplied name
 ```
