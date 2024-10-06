@@ -13,7 +13,7 @@ It is written in go, so you should have that installed.
 $ git clone --depth=1 https://github.com/rfmineguy/projman-go
 $ go build
 $ go env -w GOBIN=/usr/local/bin
-$ go install
+$ go install   # May require sudo priviledges
 $ projman <args>
 ```
 
