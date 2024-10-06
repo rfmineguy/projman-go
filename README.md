@@ -49,6 +49,7 @@ Help Options:
 
 [register command options]
       -n, --name= The name of the project
+      -d, --desc= The description of the project
       -p, --path= The path of the project on your computer
       -t, --tags= The tags you wish to associate with your project
 ```
