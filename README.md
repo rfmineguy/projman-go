@@ -33,6 +33,7 @@ Help Options:
 
 Available commands:
   list
+  modify
   register
 ```
 
@@ -70,4 +71,18 @@ Help Options:
       -a, --all      Listing of all registered projects (can be long)
       -t, --by-tags= Listing of projects registered with the supplied tags
       -n, --by-name= Listing of projects registered with the supplied name
+```
+
+## Modify
+Modify projects that you have registered in the past. If anything about the project changed you can mirror them in the database.
+
+```
+Usage:
+  projman [OPTIONS] modify [modify-OPTIONS]
+
+Help Options:
+  -h, --help      Show this help message
+
+[modify command options]
+      -n, --name= Name of project to modify
 ```
