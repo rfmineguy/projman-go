@@ -13,7 +13,7 @@ type Project struct {
 }
 
 func (p Project) write() string {
-	return fmt.Sprintf("%s, %s, %s", p.name, p.desc, strings.Join(p.tags[:], ", "));
+	return fmt.Sprintf("%s, %s, %s, %s", p.name, p.path, p.desc, strings.Join(p.tags[:], ", "));
 }
 
 func (p *Project) read(s string) *Project {
@@ -21,7 +21,8 @@ func (p *Project) read(s string) *Project {
 	for i, elem := range slice {
 		switch i {
 		case 0: p.name = elem; // name
-		case 1: p.desc = elem; // description
+		case 1: p.path = elem;
+		case 2: p.desc = elem; // description
 		default: p.tags = append(p.tags, elem); // tags are the rest
 		}
 	}

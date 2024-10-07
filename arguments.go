@@ -4,11 +4,21 @@ package main
 
 type Register struct {
 	Name string `short:"n" long:"name" required:"true" description:"The name of the project"`
+	Desc string `short:"d" long:"desc" required:"false" description:"The description of the project"`
 	Path string `short:"p" long:"path" required:"true" description:"The path of the project on your computer"`
 	Tags string `short:"t" long:"tags" required:"true" description:"The tags you wish to associate with your project"`
 	Enabled bool `hidden:"true" no-ini:"true"`
 }
 func (c *Register) Execute(args []string) error {
+	c.Enabled = true;
+	return nil;
+}
+
+type Modify struct {
+	Enabled bool `hidden:"true" no-ini:"true"`
+	Name string `short:"n" long:"name" required:"true" description:"Name of project to modify"`
+}
+func (c *Modify) Execute(args []string) error {
 	c.Enabled = true;
 	return nil;
 }
@@ -26,5 +36,6 @@ func (c *List) Execute(args []string) error {
 
 var opts struct {
 	Register Register `command:"register"`
+	Modify Modify `command:"modify"`
 	List List  `command:"list"`
 }
